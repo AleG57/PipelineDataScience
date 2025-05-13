@@ -3,37 +3,10 @@
 ## Directory Structure
 ```
 .
-├── AutoViz_Plots
-│   └── AutoViz
-│       ├── cat_var_plots.html
-│       ├── distplots_nums.html
-│       ├── heatmaps.html
-│       ├── pair_scatters.html
-│       └── violinplots.html
-├── DataViz
-│   ├── Pictures
-│   │   ├── Bar_Plots.png
-│   │   ├── Box_Plots.png
-│   │   ├── Corr_Matrix.png
-│   │   ├── Distribution_Plots.png
-│   │   ├── Histogram.png
-│   │   └── Violin_Plots.png
-│   ├── src
-│   │   └── ozone_complet.csv
-│   ├── UsualGraphs
-│   └── VisualisationAvancee.ipynb
-├── lib
-│   ├── bindings
-│   │   └── utils.js
-│   ├── tom-select
-│   │   ├── tom-select.complete.min.js
-│   │   └── tom-select.css
-│   └── vis-9.1.2
-│       ├── vis-network.css
-│       └── vis-network.min.js
 ├── Models
 │   ├── AR.ipynb
 │   ├── ARMA.ipynb
+│   ├── Boost.ipynb
 │   ├── LinearRegression.ipynb
 │   ├── LogisticRegression.ipynb
 │   ├── MA.ipynb
@@ -42,33 +15,9 @@
 │   ├── RN.ipynb
 │   ├── SARIMA.ipynb
 │   ├── sarima_model.pkl
-│   ├── src
-│   │   └── Electric_Production.csv
-│   └── XGBoost.ipynb
+│   └── src
+│       └── Electric_Production.csv
 ├── Models.html
-├── Outliers_Filtres.pdf
-├── OutliersPics
-│   ├── age_fare.png
-│   ├── age_parch.png
-│   ├── age_pclass.png
-│   ├── age_sibsp.png
-│   ├── fare_age.png
-│   ├── fare_parch.png
-│   ├── fare_pclass.png
-│   ├── fare_sibsp.png
-│   ├── parch_age.png
-│   ├── parch_fare.png
-│   ├── parch_pclass.png
-│   ├── parch_sibsp.png
-│   ├── pclass_age.png
-│   ├── pclass_fare.png
-│   ├── pclass_parch.png
-│   ├── pclass_sibsp.png
-│   ├── sibsp_age.png
-│   ├── sibsp_fare.png
-│   ├── sibsp_parch.png
-│   └── sibsp_pclass.png
-├── Outliers_Sans_Filtrage.pdf
 ├── Pictures
 │   ├── BoxPlot.png
 │   └── dCorr.png
@@ -88,17 +37,22 @@
     │   ├── _ADF.cpython-313.pyc
     │   ├── graph.cpython-313.pyc
     │   ├── _InverseDifferentiation.cpython-313.pyc
-    │   └── _regression_logistique.cpython-313.pyc
+    │   ├── _regression_logistique.cpython-313.pyc
+    │   └── _split_var_quali_quanti.cpython-313.pyc
     ├── _regression_lineaire.py
     ├── _regression_logistique.py
     ├── SAheart.csv
-    └── spam.csv
+    ├── spam.csv
+    └── _split_var_quali_quanti.py
 
-17 directories, 74 files
+6 directories, 36 files
 ```
 
 ## Recent Git Log
 ```
+84d65c6 fixing autoviz and adding content on outliers tracking
+7647ae2 fixing bugs on AutoViz and plt.show
+3469aac adding content on AutoViz
 79e86d3 adding outliers and multithreading
 31fe435 adding readme.sh
 a8524af fixing ARIMA and SARIMA models
