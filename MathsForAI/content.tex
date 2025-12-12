@@ -1,0 +1,141 @@
+\begin{table}[h!]
+\scriptsize
+\begin{tabularx}{\textwidth}{|C|C|C|C|C|C|C|}
+\hline
+\textbf{Modèle}                                    & \textbf{Quand l'utiliser}                                                                 & \textbf{Paradigme}                   & \textbf{Formule}                                                                & \textbf{Quantité à minimiser}                                                                      & \textbf{Préparation des données}  \\
+\hline
+
+Régression linéaire                                & Relation linéaire entre $X_i$ et $X_j$                                                    & Régression statistique               & $\hat{y} = X\beta + \varepsilon$                                                & $||y - X\beta||^2$                                                                                 & Standardisation \\
+\hline
+
+Régression Ridge                                   & Régression avec pénalisation $L_2$ (sélection de variables)                               & Régression statistique               & $\hat{y} = X\beta + \varepsilon$                                                & $||y-X\beta||^2 + \lambda ||\beta||^2$                                                             & Standardisation \\
+\hline
+
+Régression Lasso                                   & Régression avec pénalisation $L_1$ (sélection de variables avec annulation)               & Régression statistique               & $\hat{y} = X\beta + \varepsilon$                                                & $||y-X\beta||^2 + \lambda ||\beta||_1$                                                             & Standardisation \\
+\hline
+
+Elastic Net                                        & Régression Ridge + Lasso                                                                  & Régression statistique               & $\hat{y} = X\beta + \varepsilon$                                                & $||y-X\beta||^2 + \lambda(\alpha ||\beta||_1 +(1-\alpha)||\beta||_2^2)$                            & Standardisation \\
+\hline
+
+Régression logistique                              & Classification binaire                                                                    & Classification binaire               & $\hat{y} = \sigma(X\beta)$                                                      & $-\sum y\log(\hat y)$                                                                              & Standardisation \\
+\hline
+
+Régression logistique multinomiale                 & Classification                                                                            & Classification                       &                                                                                 &                                                                                                    & Standardisation \\
+\hline
+
+Régression polynomiale                             & Régression non linéaire                                                                   & Régression statistique               & $\hat{y} = \sum_{k=0}^{d} \beta_k x^k$                                          & $\sum_{i=1}^{n}(y_i - \hat{y_i})^2$                                                                & Standardisation \\
+\hline
+
+Régression splines                                 & Régression non linéaire, robuste, locale                                                  & Régression statistique               &                                                                                 &                                                                                                    & -               \\
+\hline
+
+Régression additive généralisée (GAM)              & Régression fortement non linéaire, robuste, locale                                        & Régression statistique               &                                                                                 &                                                                                                    & -               \\
+\hline
+
+Régression isotonique                              & Régression non linéaire monotone                                                          & Régression statistique               &                                                                                 &                                                                                                    & Standardisation \\
+\hline
+
+Régression Généralisée (GLM)                       & Régression non linéaire                                                                   & Régression statistique               &                                                                                 &                                                                                                    & Standardisation \\
+\hline
+
+Quantile regression                                & Régression fortement non linéaire, robuste, présence d'hétéroscédasticité                 & Régression statistique               &                                                                                 & pinball loss                                                                                       & Standardisation \\
+\hline
+
+Processus gaussiens (GP)                           & Régression fortement non linéaire                                                         & Régression statistique               &                                                                                 &                                                                                                    & - \\
+\hline
+
+Huber regression                                   & Régression fortement non linéaire, robuste, insensible aux outliers                       & Régression statistique               &                                                                                 & huber loss                                                                                         & - \\
+\hline
+
+Régression PLS                                     & Régression non linéaire avec analyse des composantes principales                          & Régression non supervisée            &                                                                                 &                                                                                                    & Standardisation \\
+\hline
+
+KNN regression                                     & Régression locale / ponctuelle avec beaucoup de données                                   & Régression statistique               & $\hat{y} = \frac{1}{k}\sum_{i \in \mathcal{N}_k(x)} y_i$                        & $\sum_{i=1}^{n}(y_i - \hat{y_i})^2$                                                                & Standardisation \\
+\hline
+
+\end{tabularx}
+\caption{Résulé des modèles de machine learning}
+\end{table}
+
+\newpage
+
+\begin{table}[h!]
+\scriptsize
+\begin{tabularx}{\textwidth}{|C|C|C|C|C|C|C|}
+\hline
+\textbf{Modèle}                                    & \textbf{Quand l'utiliser}                                                                 & \textbf{Paradigme}                   & \textbf{Formule}                                                                & \textbf{Quantité à minimiser}                                                                      & \textbf{Préparation des données}  \\
+\hline
+
+SVM (Support Vector Machine)                       & Classification fortement non linéaire à marge dure                                        & Classification supervisée            & $\hat{y_i} = \text{sign}({w^{T}x_{i} + b})$                                     & $\frac{1}{2}||w||^2$                                                                               & Standardisation \\
+\hline
+
+CSV-C (C-Suport Vector Classification)             & Régression fortement non linéaire avec tolérance aux marges (hyperparamètre non borné)    & Classification supervisée            & $\hat{y_i} = \text{sign}(\sum_{i=1}^{n} \alpha_{i}y_{i}K(x_{i},x_{j}) + b)$     & $\frac{1}{2}||w||^2 + C\sum_{i=1}^{n}\xi_{i}$                                                      & Standardisation \\
+\hline
+
+$\nu$-SVM ($\nu$-Suport Vector Machine)            & Régression fortement non linéaire avec tolérance aux marges (hyperparamètre borné)        & Classification supervisée            & $\hat{y_i} = \text{sign}( \sum_{i=1}^{n} \alpha_{i}y_{i}K(x_{i},x_{j}) + b)$    & $\frac{1}{2}||w||^2 - \nu \rho + \frac{1}{n}\sum_{i=1}^{n}\xi_{i}$                                 & Standardisation \\
+\hline
+
+SVR / $\epsilon$-SVM (Support Vector Regressor)    & Régression fortement non linéaire                                                         & Régression supervisée                & $\hat{y_i} = \sum_{i=1}^{n}(\alpha_{i} - \alpha_{i}^{*}) K(x_{i},x) + b$        & $\frac{1}{2}||w||^2 + C\sum_{i=1}^{n}(\xi_{i} + \xi_{i}^{*})$                                      & Standardisation \\
+\hline
+
+$\nu$-SVR ($\nu$-Support Vector Regressor)         & Régression fortement non linéaire                                                         & Régression supervisée                & $\hat{y_i} = \sum_{i=1}^{n}(\alpha_{i} - \alpha_{i}^{*}) K(x_{i},x) + b$        & $\frac{1}{2}||w||^2 + C(\nu\epsilon + \frac{1}{n}\sum_{i=1}^{n}(\xi_{i} + \xi_{i}^{*}))$           & Standardisation \\
+\hline
+
+\end{tabularx}
+\caption{Résulé des modèles de machine learning}
+\end{table}
+
+\newpage
+
+\begin{table}[h!]
+\scriptsize
+\begin{tabularx}{\textwidth}{|C|C|C|C|C|C|C|}
+\hline
+\textbf{Modèle}                                    & \textbf{Quand l'utiliser}                                                                 & \textbf{Paradigme}                   & \textbf{Formule}                                                                & \textbf{Quantité à minimiser}                                                                      & \textbf{Préparation des données}  \\
+\hline
+
+Decision tree                                      & Classification                                                                            & Classification supervisée            & Partitionnement récursif                                                        & $\sum_{i=1}^{n}(y_i - \hat{y_i})²$ dans les feuilles                                               & -               \\
+\hline
+
+Random Forest                                      & Classification, robustesse, relations non linéaires                                       & Méthode ensembliste (classification) & Moyenne ou classe majoritaire des arbres                                        & $\sum_{i=1}^{n}(y_i - \hat{y_i})²$ out-of-bag                                                      & -               \\
+\hline
+
+Gradient Boosting / XGBoost                        & Classification, robustesse, relations fortement non linéaire                              & Ensemble boosting                    & Actualisation d'un arbre faible                                                 & $-\sum y\log(\hat y)$                                                                              & -               \\
+\hline
+
+\end{tabularx}
+\caption{Résulé des modèles de machine learning}
+\end{table}
+
+\newpage
+
+\begin{table}[h!]
+\scriptsize
+\begin{tabularx}{\textwidth}{|C|C|C|C|C|C|C|}
+\hline
+\textbf{Modèle}      & \textbf{Quand l'utiliser}                                           & \textbf{Paradigme}                   & \textbf{Formule}                                                                & \textbf{Quantité à minimiser}         & \textbf{Préparation des données}  \\
+\hline
+
+AR                   & Séries temporelles                                                  & Modèle autorégressif                 &                                                                                 & -                                     & Stationnarité                      \\
+\hline
+
+MA                   & Séries temporelles                                                  & Modèle autorégressif                 &                                                                                 & -                                     & Stationnarité                      \\
+\hline
+
+ARMA                 & Séries temporelles                                                  & Modèle autorégressif                 &                                                                                 & -                                     & Stationnarité                      \\
+\hline
+
+ARIMA                & Séries temporelles                                                  & Modèle autorégressif                 &                                                                                 & -                                     & Stationnarité                      \\
+\hline
+
+SARIMA               & Séries temporelles, saisonnarité                                    & Modèle autorégressif                 &                                                                                 & -                                     & Stationnarité                      \\
+\hline
+
+SARIMAX              & Séries temporelles, saisonnarité avec variables exogènes            & Modèle autorégressif                 &                                                                                 & -                                     & Stationnarité                      \\
+\hline
+
+
+\end{tabularx}
+\caption{Résulé des modèles de machine learning}
+\end{table}
+
