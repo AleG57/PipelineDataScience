@@ -1,3 +1,81 @@
+\chapter{Formulation mathématique d'un \textit{dataset}}
+
+
+\newpage
+
+\chapter{Métriques}
+\section{Régression}
+
+\begin{itemize}
+
+    \item \textbf{Mean Absolute Error} : 
+        \begin{equation}
+            MSE(Y) = \frac{1}{n}\sum_{i = 1}^{n}|y_{i} - \hat{y_{i}}|
+        \end{equation} \\
+    \item \textbf{Root Mean Squarred Error} : 
+        \begin{equation}
+            MSE(Y) = \frac{1}{n}\sum_{i = 1}^{n}(y_{i} - \hat{y_{i}})^{2}
+        \end{equation} \\
+
+    \item 
+\end{itemize}
+
+\section{Classification}
+
+\begin{itemize}
+
+    \item \textbf{Accuracy score} : 
+        \begin{equation}
+            \text{Accuracy} = \frac{VP + VN}{VP + VN + FN + FP} = 1 - exactitude
+        \end{equation} 
+
+    Avec : \newline
+
+    \begin{itemize}
+        \item  VP : Vrai négatif   \\
+        \item  FP : Faux positifs  \\
+        \item  FN : Faux négatifs  \\
+        \item  VP : Vrais positifs \\
+    \end{itemize} 
+
+    \item \textbf{Matrice de confusion} \newline
+    Une matrice de confusion recense le nombre de faux positifs, faux négatifs, vrai positifs et vrai négatifs 
+    sous forme de tableau. Les éléments de cette matrice $2 \times 2$ veulent dire ceci : \newline
+
+    \begin{itemize}
+        \item  Vrai négatif (Réel 0, Prédit 0)   \\
+        \item  Faux positifs (Réel 0, Prédit 1)  \\
+        \item  Faux négatifs (Réel 1, Prédit 0)  \\ 
+        \item  Vrais positifs (Réel 1, Prédit 1) \\
+    \end{itemize}
+
+    La prédiction est la valeur que le modèle prédit tandis que réel est la valeur réelle, qui peut être observée à *posteriori*
+    Par exemple, une matrice de confusion peut ressembler à ça : \newline
+
+
+    \begin{table}[h!]
+    \scriptsize
+    \begin{tabularx}{\textwidth}{|C|C|C|}
+    \hline
+      &\textbf{Prédit : 0}   & \textbf{Prédit : 1}  \\
+    \hline
+    Réel : 0 & 87 & 13 \\
+    \hline
+    Réel : 1 & 18 & 61 \\
+    \hline
+    \end{tabularx}
+    \caption{Exemple de matrice de confusion}
+    \end{table}
+
+    Ici, le modèle a prédit que 87 + 18 = 105 personnes n'ont pas survécues à l'accident sur les 87 + 13 = 100 personnes qui n'ont réellement pas survécues.
+    De même, le modèle prédit que 13 + 61 = 74 personnes on survécues sur 10 + 61 = 71 qui ont réelement survécues. \\
+
+\end{itemize}
+
+\newpage
+
+\chapter{Synthèse des modèles et leurs usages}
+
 \begin{table}[h!]
 \scriptsize
 \begin{tabularx}{\textwidth}{|C|C|C|C|C|C|C|}
@@ -54,7 +132,7 @@ KNN regression                                     & Régression locale / ponctu
 \hline
 
 \end{tabularx}
-\caption{Résulé des modèles de machine learning}
+\caption{Synthèse des modèles de Machine Learning - régression}
 \end{table}
 
 \newpage
@@ -82,7 +160,7 @@ $\nu$-SVR ($\nu$-Support Vector Regressor)         & Régression fortement non l
 \hline
 
 \end{tabularx}
-\caption{Résulé des modèles de machine learning}
+\caption{Synthèse des modèles de Machine Learning - vecteurs support}
 \end{table}
 
 \newpage
@@ -104,7 +182,7 @@ Gradient Boosting / XGBoost                        & Classification, robustesse,
 \hline
 
 \end{tabularx}
-\caption{Résulé des modèles de machine learning}
+\caption{Synthèse des modèles de Machine Learning - méthodes d'ensemble}
 \end{table}
 
 \newpage
@@ -136,6 +214,39 @@ SARIMAX              & Séries temporelles, saisonnarité avec variables exogèn
 
 
 \end{tabularx}
-\caption{Résulé des modèles de machine learning}
+\caption{Synthèse des modèles de Machine Learning - processus autorégressifs}
 \end{table}
 
+\newpage
+
+\begin{table}[h!]
+\scriptsize
+\begin{tabularx}{\textwidth}{|C|C|C|C|C|C|C|}
+\hline
+\textbf{Modèle}      & \textbf{Quand l'utiliser}                                           & \textbf{Paradigme}                   & \textbf{Formule}                                                                & \textbf{Quantité à minimiser}         & \textbf{Préparation des données}  \\
+\hline
+
+AR                   & Séries temporelles                                                  & Modèle autorégressif                 &                                                                                 & -                                     & Stationnarité                      \\
+\hline
+
+
+\end{tabularx}
+\caption{Synthèse des modèles de Machine Learning - clustering}
+\end{table}
+
+\newpage
+
+\begin{table}[h!]
+\scriptsize
+\begin{tabularx}{\textwidth}{|C|C|C|C|C|C|C|}
+\hline
+\textbf{Modèle}      & \textbf{Quand l'utiliser}                                           & \textbf{Paradigme}                   & \textbf{Formule}                                                                & \textbf{Quantité à minimiser}         & \textbf{Préparation des données}  \\
+\hline
+
+AR                   & Séries temporelles                                                  & Modèle autorégressif                 &                                                                                 & -                                     & Stationnarité                      \\
+\hline
+
+
+\end{tabularx}
+\caption{Synthèse des modèles de Machine Learning - réduction de dimension}
+\end{table}
