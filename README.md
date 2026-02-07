@@ -1,4 +1,4 @@
-# Data science tutorial
+# Data science tutorials
 Intuitive deep & machine learning tutorials including 
 
 * theory and paper sources
@@ -7,10 +7,13 @@ Intuitive deep & machine learning tutorials including
 * practical Python code using modern libraries 
 ---
 
-# Machine learning
+[] French version
+
+# *Machine learning*
 
 * Data treatment  -> [See index](MachineLearning/0.Index.ipynb)
 * Models          -> [See index](MachineLearning/Models/0.Index.ipynb)
 
-# Deep learning -> 
+# *Deep learning*
 
+[] English version
